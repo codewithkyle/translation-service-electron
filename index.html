@@ -4,9 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing</title>
+    <title>Translation Service</title>
+    <meta name="description" content="Convert translation JSON or CSVs to JSON and PHP.">
+
+    <style>
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            border: none;
+            outline: none;
+            position: relative;
+        }
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {  
+            position: relative;
+            margin: 0;
+            padding: 0;  
+            border: 0;  
+            font-size: 100%;
+            font: inherit;  
+            vertical-align: baseline; 
+        }
+
+        body{
+            overflow-x: hidden;
+            display: block;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        :root{
+            font-size: 100%;
+        }
+    </style>
+
+    <link href="./main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800&display=swap" rel="stylesheet">
 </head>
 <body>
-    Hello world
+    <main>
+        <upload-prompt>
+            <input type="file" id="fileInput" accept=".json,.csv">
+            <label for="fileInput">
+                <heading>No translation file</heading>
+                <instructions>
+                    Drag & Drop to upload or click create to start a new translation
+                </instructions>
+                <button>
+                    <span>Create</span>
+                </button>
+                <drop-instructions>
+                    <upload>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="arrow-to-top" class="-upload svg-inline--fa fa-arrow-to-top fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M35.5 279.9l148-148.4c4.7-4.7 12.3-4.7 17 0l148 148.4c4.7 4.7 4.7 12.3 0 17l-19.6 19.6c-4.8 4.8-12.5 4.7-17.1-.2L218 219.2V468c0 6.6-5.4 12-12 12h-28c-6.6 0-12-5.4-12-12V219.2l-93.7 97.1c-4.7 4.8-12.4 4.9-17.1.2l-19.6-19.6c-4.8-4.7-4.8-12.3-.1-17zM12 84h360c6.6 0 12-5.4 12-12V44c0-6.6-5.4-12-12-12H12C5.4 32 0 37.4 0 44v28c0 6.6 5.4 12 12 12z"></path></svg>
+                        <svg class="-spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle fill="none" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                    </upload>
+                    <status>Drop your file to upload</status>
+                </drop-instructions>
+            </label>
+        </upload-prompt>
+    </main>
+    <script src="./main.js" defer="defer"></script>
 </body>
 </html>
