@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const { Server } = require('./Server');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,13 +14,15 @@ function createWindow()
             height: 600,
             webPreferences:
             {
-                nodeIntegration: true,
+                nodeIntegration: true
             }
         }
     );
 
     // and load the index.html of the app.
     win.loadFile('index.html');
+
+    // win.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', () => 
@@ -30,6 +33,7 @@ function createWindow()
             win = null
         }
     );
+    new Server();
 }
 
 // This method will be called when Electron has finished
